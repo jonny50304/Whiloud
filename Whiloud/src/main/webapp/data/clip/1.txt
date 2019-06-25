@@ -1,0 +1,6 @@
+1:40|2:54|HOBBS|pick a door|選一道門
+2:54|3:58|SHAW|I'll right there|我選那道門
+3:58|5:20|HOBBS|No, that's my door. Pick another door|不，那是我的門，請選別的門
+5:20|6:24|SHAW|What's wrong with you?|你有什麼問題嗎?
+8:52|9:98|SHAW|You know what? You were right. This is your door?|你知道嗎?你是對的，這道是你的門
+9:98|11:64|HOBBS|what's the matter. You got a lot of bad guys behind that door?|怎麼了? 你的門後面有很多壞蛋?

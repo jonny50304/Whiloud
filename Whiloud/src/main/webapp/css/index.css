@@ -1,0 +1,152 @@
+/*整體*/
+body{
+	margin: 0;
+	background-size: 100%;
+}
+body.is-loading *,                               /*-moz-為Firefox前置詞, -webkit-為Chrome前置詞, -ms-為IE前置詞*/
+body.is-loading *:before,                         
+body.is-loading *:after {                        /*！important是優先級的意思，會優先使用id或者class定義的類 */
+	-moz-animation: none !important;
+	-webkit-animation: none !important;
+	-ms-animation: none !important;
+	animation: none !important;
+	-moz-transition: none !important;
+	-webkit-transition: none !important;
+	-ms-transition: none !important;
+	transition: none !important;
+}
+body.is-loading #banner .inner {  /*字體動態效果*/
+	-moz-transform: scale(0.99);
+	-webkit-transform: scale(0.99);
+	-ms-transform: scale(0.99);
+	transform: scale(0.99);
+	opacity: 0;
+}
+body.is-loading #banner:before {  /*整體暗到亮*/
+	opacity: 1;
+}
+#banner {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-top: 0;
+	min-height: 100vh;
+	height: 100vh !important;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+#banner:before {
+	transition: opacity 3s ease;
+	transition-delay: 1.25s;
+	content: '';
+	display: block;
+	background-color: rgba(0, 0, 0, 0.75);
+	height: 100%;
+	left: 0;
+	opacity: 0.45;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+#banner .inner {
+	transform: scale(1.0);
+	transition: opacity 1s ease, transform 1s ease;
+	opacity: 1;
+	position: relative;
+	z-index: 2;
+}
+/*Whiloud標頭-----------------------------------------------------------------------------------------------------------------*/
+#banner h1 {
+	font-size: 5rem;
+	margin-bottom: 1rem;
+	color: #FFF;	
+	text-align: center;
+}
+/*影片------------------------------------------------------------------------------------------------------------------------*/
+#banner video {
+	transform: translateX(50%) translateY(50%);
+	position: absolute;
+	bottom: 50%;
+	right: 50%;
+	width: auto;
+	height: auto;
+	min-width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+}
+/*按鈕------------------------------------------------------------------------------------------------------------------------*/
+.button {
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	border-radius: 4px;
+	border: 0;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 400;
+	height: 2.85rem;
+	line-height: 2.95rem;
+	padding: 0 1.5rem;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	text-transform: uppercase;
+}
+.button.special {
+	background-color: #5AA6ED;        /*按鈕顏色*/ 
+	color: #ffffff !important;        /*按鈕字的顏色*/
+}
+/*快速登入圖片-----------------------------------------------------------------------------------------------------------------*/
+.divrightbottom {
+width:100px;
+float:right;
+position:fixed;
+right: -120px;
+bottom: -10px;
+z-index:20;
+position:absolute; /* position fixed for IE6 */
+}
+img{
+	width:200px;
+}
+img:hover{
+	width:250px;
+}
+/*輸入文字---------------------------------------------------------------------------------------------------------------------*/
+input[type="text"],
+input[type="password"],
+textarea {
+	-webkit-appearance: none;
+	border-radius: 4px;
+	border: solid 1px;
+	display: block;
+	outline: 0;
+	padding: 0 1rem;
+	text-decoration: none;
+	width: 24.5rem;
+	background: rgba(144, 144, 144, 0.75);
+	border-color: #fff; 
+	margin: 0 0 0.5rem 0;
+	height: 2.75rem;
+}
+input[type="text"]:focus,                    /*focus為USER在使用時的效果*/
+input[type="password"]:focus,
+textarea:focus {
+	border-color: #5AA6ED;
+	box-shadow: 0 0 0 1px #5AA6ED;
+}
+*{
+	font-family: Microsoft JhengHei;
+	color: #ffffff ; 
+}
+input::placeholder{
+    color: #ffffff ;
+}
+
+input[type="checkbox"]{
+	margin:5px; 
+	margin-bottom: 10px;
+}

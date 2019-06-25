@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chat</title>
+</head>
+<style>
+    html,
+    body {
+        margin: 0;
+        background: rgba(255, 255, 255, 0.7);
+        font-family: Microsoft JhengHei;
+        margin-top: 20px;
+    }
+
+    .wrapper {
+        width: 500px;
+        height: 650px;
+        padding: 5px;
+        margin: 0 auto;
+        background: url("../images/b1.jpg") center;
+    }
+
+    .controls {
+        height: 100px;
+        margin: 5px 0px;
+        position: relative;
+    }
+
+    #chatBoard {
+        height: 400px;
+        background-color: #fff;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding: 2px;
+    }
+
+    .send {
+        /* border: 1px solid red; */
+        width: 99%;
+        padding: 1px;
+        text-align: right;
+    }
+
+    .receive {
+        width: 99%;
+        padding: 1px;
+        text-align: left;
+    }
+
+    /* .items {
+        height: 30px;
+    }
+
+    #colorStyle {
+        width: 50px;
+        border: none;
+        padding: 0;
+    } */
+
+    #messageInput {
+        width: 440px;
+        max-width: 440px;
+        height: 90px;
+        max-height: 90px;
+    }
+
+   #sendButton {
+        width: 50px;
+        height: 96px;
+        float: right;
+    }
+
+    #memberNo2Nickname {
+        position: relative;
+        /* top:-90px; */
+        left: -300px;
+        font-size: 30px;
+        float: right;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <img src="images/1.jpg" alt="" style="width: 120px;border-radius: 100%;" id="memberNo2Picture">
+        <div  id="memberNo2Nickname">臭柴</div>
+        <div id="chatBoard">
+            <div class="send">${我傳的內容} : ${我的名子}</div>
+            <div class="receive">${他的名子} : ${收到的內容}</div>
+			<div><a id="msg_end" name="1" href="#1">&nbsp</a></div>
+        </div>
+        <div class="controls">
+            <!-- <div class="items">
+                <input id="colorStyle" type="color" placeHolder='#000' title="font color" />
+            </div> -->
+            <textarea id="messageInput" placeHolder="開始聊天吧"></textarea>
+            <input id="sendButton" type="button" value="SEND" disabled>
+        </div>
+    </div>
+
+</body>
+
+</html>

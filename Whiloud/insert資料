@@ -1,0 +1,156 @@
+/*
+SQLyog Community v13.1.1 (64 bit)
+MySQL - 8.0.13 : Database - whiloud
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`whiloud` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+USE `whiloud`;
+
+/*Table structure for table `chat` */
+
+/*Data for the table `chat` */
+
+insert  into `chat`(`chatNo`,`MemberNo1`,`MemberNo2`,`creationDateTime`,`message`,`isRead`) values 
+(1,1,3,'2019-04-29 22:10:41','你好~',1),
+(2,3,1,'2019-04-30 22:10:41','Hello! Nice to meet u.',1),
+(3,1,3,'2019-05-01 17:10:41','哇！你英文好好喔，你學多久了啊?',1),
+(4,3,1,'2019-05-01 18:10:41','Almost 3 years, but I\'m still working on it.',1),
+(5,1,3,'2019-05-01 19:10:41','我都看不懂你寫的欸，可以教教我嗎?',1),
+(6,3,1,'2019-05-01 21:10:41','Use this app more and sure you will improve very fast',1);
+
+/*Table structure for table `clip` */
+
+
+
+
+
+
+
+insert  into `clip`(`clipNo`,`clipPath`,`clipTitle`,`picturePath`,`creationDateTime`,`role1`,`role1Gender`,`role2`,`role2Gender`,`text`,`hashtag`) values 
+(1,'/data/clip/1.mp4','FAST & FURIOUS: Hobbs & Shaw ','/data/clip/TheFastAndTheFurious.jpg','2019-04-27 20:55:26','HOBBS','male','SHAW','male','This is the first clip.',NULL),
+(2,'/data/clip/2.mp4','40不惑-1','/data/clip/2.jpg','2019-05-07 10:25:09','Pete','male','Barry','male','如果老婆遇到什麼大事',NULL),
+(3,'/data/clip/3.mp4','40不惑-2','/data/clip/3.jpg','2019-05-07 10:26:24','Debbie','female','Pete','male','為什麼不跟我吵架',NULL),
+(4,'/data/clip/4.mp4','自殺突擊隊-醫師vs小丑','/data/clip/4.jpg','2019-05-07 10:29:45','Narrator|Dr. Quinzel','female','Joker','male','女醫生愛上犯人',NULL),
+(5,'/data/clip/5.mp4','星際異攻隊-浣熊和Groot','/data/clip/5.jpg','2019-05-07 10:31:46','Rocket Raccoon',NULL,NULL,NULL,NULL,NULL);
+
+
+
+
+
+
+
+
+
+insert  into `friendlist`(`serialNo`,`MemberNo`,`FriendNo`,`creationDateTime`,`accepted`,`chatNo`) values 
+(1,1,2,'2019-04-27 20:55:14',0,NULL),
+(2,1,3,'2019-04-27 20:55:14',1,NULL),
+(3,1,4,'2019-04-27 20:55:14',1,NULL),
+(4,5,1,'2019-04-27 20:55:14',0,NULL),
+(5,2,3,'2019-04-27 20:55:14',0,NULL),
+(6,2,4,'2019-04-27 20:55:14',1,NULL),
+(7,2,5,'2019-04-27 20:55:14',1,NULL),
+(8,3,4,'2019-04-27 20:55:14',1,NULL);
+
+
+
+
+
+
+insert  into `member`(`memberNo`,`account`,`PASSWORD`,`nickname`,`gender`,`phone`,`creationDateTime`,`picture`,`birthday`,`points`,`isFBLogin`,`isGoogleLogin`,`introduction`,`interest`) values 
+(0,'nullString','12345','nullString','nullString','nullString','2019-05-08 14:23:10',NULL,NULL,0,0,0,NULL,NULL),
+(1,'whiloud01@gmail.com','6f7e5a841f0792d8867e6b5a1cf37993','whiloud01','M',NULL,'2019-04-27 20:54:58',NULL,NULL,30,0,0,NULL,NULL),
+(2,'whiloud02@gmail.com','6f7e5a841f0792d8867e6b5a1cf37993','whiloud02','F',NULL,'2019-04-27 20:54:58',NULL,NULL,10,0,0,NULL,NULL),
+(3,'whiloud03@gmail.com','6f7e5a841f0792d8867e6b5a1cf37993','whiloud03','M',NULL,'2019-04-27 20:54:58',NULL,NULL,5,0,0,NULL,NULL),
+(4,'whiloud04@gmail.com','6f7e5a841f0792d8867e6b5a1cf37993','whiloud04','F',NULL,'2019-04-27 20:54:58',NULL,NULL,7,0,0,NULL,NULL),
+(5,'whiloud05@gmail.com','6f7e5a841f0792d8867e6b5a1cf37993','whiloud05','O',NULL,'2019-04-27 20:54:58',NULL,NULL,0,0,0,NULL,NULL);
+
+
+
+insert  into `post`(`postNo`,`postTitle`,`memberNo1`,`memberNo2`,`clipNo`,`creationDateTime`,`postText`,`friendOnly`,`done`) values 
+(1,'小弟急徵1配音',1,3,1,'2019-04-27 21:16:31','感謝大大幫忙，好友++',0,1),
+(2,'獨立完成',1,1,2,'2019-05-08 12:53:04','一個人配音好無聊啊',0,1),
+(3,'一起加好友',3,NULL,3,'2019-05-08 13:37:59','有沒有女高音願意幫忙~',0,0);
+
+
+
+insert  into `record`(`recordNo`,`postNo`,`memberNo`,`scriptNo`,`recordPath`,`creationDateTime`) values 
+(1,1,1,1,'/data/record/1.wav','2019-04-28 19:32:44'),
+(2,1,3,2,'/data/record/2.wav','2019-04-28 19:32:44'),
+(3,1,1,3,'/data/record/3.wav','2019-04-28 19:32:44'),
+(4,1,3,4,'/data/record/4.wav','2019-04-28 19:32:44'),
+(5,1,3,5,'/data/record/5.wav','2019-04-28 19:32:44'),
+(6,1,1,6,'/data/record/6.wav','2019-04-28 19:32:44'),
+(7,2,1,7,'/data/record/7.m4a','2019-05-08 12:55:59'),
+(8,2,1,8,'/data/record/8.m4a','2019-05-08 12:55:59'),
+(9,2,1,9,'/data/record/9.m4a','2019-05-08 12:55:59'),
+(10,2,1,10,'/data/record/10.m4a','2019-05-08 12:55:59'),
+(11,2,1,11,'/data/record/11.m4a','2019-05-08 12:55:59'),
+(12,2,1,12,'/data/record/12.m4a','2019-05-08 12:55:59'),
+(13,2,1,13,'/data/record/13.m4a','2019-05-08 12:55:59'),
+(14,2,1,14,'/data/record/14.m4a','2019-05-08 12:55:59'),
+(15,2,1,15,'/data/record/15.m4a','2019-05-08 12:55:59'),
+(16,3,NULL,16,NULL,'2019-05-08 13:45:47'),
+(17,3,3,17,'/data/record/17.m4a','2019-05-08 13:45:47'),
+(18,3,3,18,'/data/record/18.m4a','2019-05-08 13:45:47'),
+(19,3,NULL,19,NULL,'2019-05-08 13:45:47'),
+(20,3,3,20,'/data/record/20.m4a','2019-05-08 13:45:47'),
+(21,3,NULL,21,NULL,'2019-05-08 13:45:47'),
+(22,3,NULL,22,NULL,'2019-05-08 13:45:47');
+
+
+insert  into `script`(`scriptNo`,`clipNo`,`roleNo`,`roleName`,`scriptCount`,`scriptPosition`,`startTime`,`endTime`,`englishScript`,`chineseScript`) values 
+(1,1,1,'HOBBS',6,1,'1.40','2.54','pick a door','選一道門'),
+(2,1,2,'SHAW',6,2,'2.54','3.58','I\'ll right there','我選那道門'),
+(3,1,1,'HOBBS',6,3,'3.58','5.20','No, that\'s my door. Pick another door','不，那是我的門，請選別的門'),
+(4,1,2,'SHAW',6,4,'5.20','6.24','What\'s wrong with you?','你有什麼問題嗎?'),
+(5,1,2,'SHAW',6,5,'8.52','9.98','You know what? You were right. This is your door?','你知道嗎?你是對的，這道是你的門'),
+(6,1,1,'HOBBS',6,6,'9.98','12.00','what\'s the matter. You got a lot of bad guys behind that door?','怎麼了? 你的門後面有很多壞蛋?'),
+(7,2,1,'Pete',9,1,'0.50','3.19','This sounds horrible. But do you ever wondered what it would be like...','這聽起來很可怕，但你有沒有想過...'),
+(8,2,1,'Pete',9,2,'3.19','6.12','if you and your wife were separated by something bigger.','要是你跟你老婆因為某件嚴重的事而分開'),
+(9,2,1,'Pete',9,3,'6.63','8.55','like death, like her death.','像是死亡 譬如說她死了'),
+(10,2,2,'Barry',9,4,'8.55','10.7','I have given it a fair amount of thought.','我還真有認真想過'),
+(11,2,1,'Pete',9,5,'10.70','14.50','Not in a painful way, but just like a gentle floating off.','不是想像她痛苦的死了，只是像輕輕的飄走了那樣'),
+(12,2,2,'Barry',9,6,'14.50','17.61','It’s gotta be peaceful, I mean this is the mother of your children.','很安詳的那樣，她可是小孩的媽阿'),
+(13,2,1,'Pete',9,7,'17.61','19.23','And then the new wife would be great!','然後新的老婆很棒'),
+(14,2,2,'Barry',9,8,'19.23','21.53','God, I can’t wait to meet my second wife!','天啊！我等不及要跟我第二任老婆相遇了'),
+(15,2,2,'Barry',9,9,'21.55','24.63','I hope she likes me better than this one.','我希望她比我現任老婆還喜歡我'),
+(16,3,1,'Debbie',7,1,'0.83','1.97','Why didn’t you fight?','你為何不跟我吵?'),
+(17,3,2,'Pete',7,2,'1.91','4.00','I don’t know. You get so mad at me.','我不知道，你氣得要死'),
+(18,3,2,'Pete',7,3,'4.79','6.24','Sometimes I feel like you want to kill me.','有時候我覺得你想殺了我'),
+(19,3,1,'Debbie',7,4,'6.24','7.83','I do wanna kill you.','我是真的想殺了你'),
+(20,3,2,'Pete',7,5,'7.83','8.44','How would you do it?','你要怎麼殺?'),
+(21,3,1,'Debbie',7,6,'8.44','12.00','I would poison cupcakes that you pretend not to eat everyday','我會下毒在你每天假裝沒吃的杯子蛋糕裡'),
+(22,3,1,'Debbie',7,7,'12.00','16.25','I would enjoy our last few months together that while killing you','在殺你的同時我會好好的享受最後相處的幾個月'),
+(23,4,1,'Narrator',11,1,'0.14','3.21','She was assigned to The Clown himself.','她被派給了小丑'),
+(24,4,2,'Joker',11,2,'3.21','8.08','Dr. Quinzel, I lived for these moments with you.','奎澤爾醫生，我就盼著跟你共處的時光'),
+(25,4,2,'Joker',11,3,'8.87','10.41','What do you get?','你拿了什麼'),
+(26,4,1,'Dr. Quinzel',11,4,'10.41','12.25','I got you a kitty.','給你拿了隻小貓'),
+(27,4,2,'Joker',11,5,'12.25','13.84','So thoughtful','真體貼'),
+(28,4,1,'Narrator',11,6,'13.84','17.68','She thought she was curing him. But, she was falling in love','她以為自己在治療他，但其實她愛上了他'),
+(29,4,2,'Joker',11,7,'19.25','22.16','There is something you could do for me, doctor.','你可以幫我個忙，醫生'),
+(30,4,1,'Dr. Quinzel',11,8,'22.16','24.05','Anything. I mean, yeah.','你隨便說，當然'),
+(31,4,2,'Joker ',11,9,'24.05','26.08','I need a machine gun.','我需要一把機槍'),
+(32,4,1,'Dr. Quinzel',11,10,'28.36','30.02','A machine gun?','機槍?'),
+(33,4,1,'Narrator',11,11,'32.04','34.60','Talk about a workplace romance gone wrong.','這才叫辦公室戀情出了岔子'),
+(34,5,1,'Rocket Raccoon',10,1,'0','5.0','Then you push this button, which will give you five minutes to get out of there.','然後你再按這個按鈕，然後你有五分鐘的時間逃跑'),
+(35,5,1,'Rocket Raccoon',10,2,'5.0','9.76','Now, whatever you do. Don’t push this button','聽好，不管怎樣，千萬別按這個'),
+(36,5,1,'Rocket Raccoon',10,3,'9.76','13.37','Because that would set off the bomb immediately and we’ll all be dead.','按下它炸彈會立刻爆炸，然後我們就死定了'),
+(37,5,1,'Rocket Raccoon',10,4,'13.37','15.71','Now, repeat back what I just said.','好了，重複一遍我剛說的話'),
+(38,5,2,'Groot',10,5,'15.71','19.41','I am Groot. I am Groot.','我叫格魯特x2'),
+(39,5,1,'Rocket Raccoon',10,6,'19.41','20.24','That’s right.','沒錯'),
+(40,5,2,'Groot',10,7,'20.24','21.09','I am Groot.','我叫格魯特'),
+(41,5,1,'Rocket Raccoon',10,8,'21.09','25.81','No! that’s the button that will kill everyone! Try again','不！這個按鈕會把我們都炸死的！再來一遍'),
+(42,5,2,'Groot ',10,9,'28.11','33.68','I am Groot. I am Groot. I am Groot.','我叫格魯特x3'),
+(43,5,1,'Rocket Raccoon',10,10,'33.68','37.29','No! That’s exactly what you just said. How is that even possible?','不！這跟你剛說的一模一樣好嗎? 這怎麼可能呢?');
+
+

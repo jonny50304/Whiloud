@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>影片播放</title>
+    <link href="css/video.css" rel="stylesheet" type="text/css">
+    <script src="js/video.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tab.js"></script>    
+    <style type="text/css">
+      .vjs-default-skin { color: rgba(171,208,102,1); }
+      .vjs-default-skin .vjs-play-progress,
+      .vjs-default-skin .vjs-volume-level { background-color: rgba(214,232,181,0.7) }
+      .vjs-default-skin .vjs-control-bar,
+      .vjs-default-skin .vjs-big-play-button { background: rgba(40,124,134,0.8) }
+      .vjs-default-skin .vjs-slider { background: rgba(0,9,219,0.23) }
+      .vjs-default-skin .vjs-control-bar { font-size: 110% }
+    </style>
+  </head>
+
+  <body>
+    <div class="leftFixed">
+      <video id="MY_VIDEO_1" class="video-js vjs-default-skin" 
+        controls preload="auto" width="480" height="360" poster=""
+        data-setup="{}">
+        <source src="video/AAAAA.mp4" type='video/mp4'>
+      </video>
+      
+
+      <div class="list">
+
+        <div class="member">
+          <a href=""><img src="images/8.jpg" alt="放影片的人" class="videoer"></a>
+          <h1>作者名子</h1>
+          <br>
+          <button class="likeWork">喜歡此作品</button>
+        </div>
+
+        <div class="work">          
+          <h5>片名：  ${片名EL}<br></h5>
+          <br>
+          <h5>創作日期： ${日期EL}<br></h5>
+          <br>
+          <h5>想說的話：</h5> <h6>${內容EL}<br><h6>
+
+        </div>
+        
+        <div class="leftButtton">
+          <hr>
+          <h2>先選擇角色，就可以去錄音</h2>
+          <select>  
+            <option selected="true"></option>
+            <option>${角色名稱A}</option>
+            <option>${角色名稱B}</option>
+            <option>全部錄音</option>
+          </select>
+          <br>
+          <a class="recButton" id="goRec" href="rec.html">選好去錄音</a>
+        </div> 
+
+      </div>
+    </div>
+
+    <div class="rightFloat">
+      <div id="tab-demo">
+        <ul class="tab-title">
+          <li><a class="tabBtn" href="#tab01">台詞</a></li>
+          <li><a class="tabBtn" href="#tab02">留言</a></li>
+        </ul> 
+        <div class="tab-inner" id="tab01">
+          <div class="text">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam sint esse fugiat et labore fuga ipsum totam aperiam earum cupiditate ipsa quo voluptate quisquam voluptatibus, laboriosam distinctio.</h2>
+            <br>
+            <h3>中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯</h3>
+            <div class="allSoundBtm">
+              <button class="Original">聽原音</button>
+              <button class="listenRec">聽錄音</button>
+              <button class="likeScript">錄音讚</button>
+            </div>  
+          </div>
+          <div class="text">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam sint esse fugiat et labore fuga ipsum totam aperiam earum cupiditate ipsa quo voluptate quisquam voluptatibus, laboriosam distinctio.</h2>
+            <br>
+            <h3>中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯</h3>
+            <div class="allSoundBtm">
+              <button class="Original">聽原音</button>
+              <button class="listenRec">聽錄音</button>
+              <button class="likeScript">錄音讚</button>
+            </div>  
+          </div>
+          <div class="text">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam sint esse fugiat et labore fuga ipsum totam aperiam earum cupiditate ipsa quo voluptate quisquam voluptatibus, laboriosam distinctio.</h2>
+            <br>
+            <h3>中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯</h3>
+            <div class="allSoundBtm">
+              <button class="Original">聽原音</button>
+              <button class="listenRec">聽錄音</button>
+              <button class="likeScript">錄音讚</button>
+            </div>  
+          </div>
+          <div class="text">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam sint esse fugiat et labore fuga ipsum totam aperiam earum cupiditate ipsa quo voluptate quisquam voluptatibus, laboriosam distinctio.</h2>
+            <br>
+            <h3>中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯</h3>
+            <div class="allSoundBtm">
+              <button class="Original">聽原音</button>
+              <button class="listenRec">聽錄音</button>
+              <button class="likeScript">錄音讚</button>
+            </div>  
+          </div>
+          <div class="text">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam sint esse fugiat et labore fuga ipsum totam aperiam earum cupiditate ipsa quo voluptate quisquam voluptatibus, laboriosam distinctio.</h2>
+            <br>
+            <h3>中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯</h3>
+            <div class="allSoundBtm">
+              <button class="Original">聽原音</button>
+              <button class="listenRec">聽錄音</button>
+              <button class="likeScript">錄音讚</button>
+            </div>  
+          </div>
+          <div class="text">
+            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam sint esse fugiat et labore fuga ipsum totam aperiam earum cupiditate ipsa quo voluptate quisquam voluptatibus, laboriosam distinctio.</h2>
+            <br>
+            <h3>中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯 中文翻譯</h3>
+            <div class="allSoundBtm">
+              <button class="Original">聽原音</button>
+              <button class="listenRec">聽錄音</button>
+              <button class="likeScript">錄音讚</button>
+            </div>  
+          </div>
+        </div> 
+
+        <div class="tab-inner" id="tab02">
+          <form>
+            <textarea class="inputMessage" type="text" placeholder="在此輸入留言內容"></textarea>
+            <input type="submit" class="sendMessage" value="發送">
+          </form>  
+          <div class="message">
+            <a href=""><img src="images/8.jpg" alt="留言的人" class="messager"></a>
+            <h4>留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言留言</h4>
+          </div>  
+          <div class="message">  
+            <a href=""><img src="images/8.jpg" alt="留言的人" class="messager"></a>
+            <h4>留</h4>
+          </div>  
+          <div class="message">
+            <a href=""><img src="images/8.jpg" alt="留言的人" class="messager"></a>
+            <h4>灌水</h4>
+          </div>  
+          <div class="message">
+            <a href=""><img src="images/8.jpg" alt="留言的人" class="messager"></a>
+            <h4>6666666666</h4>
+          </div>  
+          <div class="message">
+            <a href=""><img src="images/8.jpg" alt="留言的人" class="messager"></a>
+            <h4>7777777777777</h4>
+          </div>
+        </div>
+      </div>
+    </div>  
+
+    
+  </body>
+</html>
